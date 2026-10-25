@@ -507,6 +507,89 @@ button,a,.tx,.pick,.nav-item,.tab{touch-action:manipulation}
 .sheet-act.primary>span{background:var(--mint);color:#06281c}
 .sheet-act.danger b{color:var(--coral)}
 
+/* ---------- СКАНЕР ЧЕКІВ ---------- */
+.scan-cta{display:flex;align-items:center;gap:12px;width:100%;padding:13px 15px;margin-bottom:14px;border-radius:14px;text-align:left;
+  background:linear-gradient(135deg,var(--gold-soft),transparent);border:1.5px dashed color-mix(in srgb,var(--gold) 55%,transparent);transition:.15s}
+.scan-cta:hover{border-style:solid}
+.scan-cta .em{font-size:24px}
+.scan-cta b{display:block;font-size:14.5px}
+.scan-cta small{display:block;font-size:12px;color:var(--text-3);margin-top:2px}
+.rc-pick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rc-big{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:150px;border-radius:18px;cursor:pointer;text-align:center;padding:14px;
+  background:linear-gradient(145deg,var(--gold),var(--gold-2));color:#231803;box-shadow:0 10px 26px -12px var(--gold)}
+.rc-big.soft{background:var(--surface-2);color:var(--text);border:1px solid var(--line-2);box-shadow:none}
+.rc-big .em{font-size:38px}
+.rc-big b{font-size:15px}
+.rc-big small{font-size:12px;opacity:.75}
+.rc-prog{display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 8px}
+.rc-prog b{margin-top:14px;font-size:15px}
+.rc-prog .bar{width:100%}
+.rc-spin{width:46px;height:46px;border-radius:50%;border:4px solid var(--gold-soft);border-top-color:var(--gold);animation:spin .8s linear infinite}
+.rc-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:4px}
+.rc-thumb{width:84px;max-height:150px;object-fit:cover;object-position:top;border-radius:10px;border:1px solid var(--line-2);flex:0 0 auto}
+.rc-meta{flex:1;min-width:0}
+.rc-meta .field{margin-bottom:10px}
+.rc-check{font-size:13px;line-height:1.5;padding:11px 13px;border-radius:12px;margin-top:4px}
+.rc-check.ok{background:var(--mint-soft);color:var(--mint)}
+.rc-check.warn{background:var(--coral-soft);color:var(--coral)}
+.rc-check .link{color:inherit;text-decoration:underline;font-weight:600;font-size:13px;padding:0}
+.rc-items{display:flex;flex-direction:column;gap:8px}
+.rc-item{display:grid;grid-template-columns:30px 1fr;gap:6px 8px;padding:10px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line);transition:opacity .15s}
+.rc-item.off{opacity:.45}
+.rc-item .rc-sub{grid-column:2;display:grid;grid-template-columns:1fr 112px;gap:8px}
+.rc-item .input{padding:10px 12px;background:var(--surface)}
+.rc-item .rc-amt{text-align:right;font-weight:600}
+.rc-fixed{grid-column:2;font-size:11.5px;color:var(--mint)}
+.rc-on{display:grid;place-items:center;align-self:start;margin-top:8px;cursor:pointer}
+.rc-on input{width:20px;height:20px;accent-color:var(--gold)}
+.rc-raw{margin-top:14px;font-size:12.5px;color:var(--text-3)}
+.rc-raw summary{cursor:pointer;padding:6px 0}
+.rc-raw pre{white-space:pre-wrap;font-family:var(--font-num);font-size:11.5px;background:var(--surface-2);padding:10px;border-radius:10px;max-height:240px;overflow:auto}
+
+/* ---------- КАЛЕНДАР ---------- */
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-nav b{font-family:var(--font-display);font-size:16px}
+.cal-wk{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:11.5px;color:var(--text-3);font-weight:600;margin-bottom:4px}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cal-d{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:1px;min-height:54px;padding:6px 0 5px;border-radius:11px;transition:background .12s}
+.cal-d:hover{background:var(--surface-2)}
+.cal-d .n{font-size:14px;font-weight:600;font-family:var(--font-num);line-height:1.2}
+.cal-d .v{font-size:9.5px;font-family:var(--font-num);line-height:1.2;min-height:11px;letter-spacing:-.02em}
+.cal-d .dots{display:flex;gap:3px;height:6px;margin-top:1px}
+.cal-d.out{opacity:.38}
+.cal-d.today .n{color:var(--gold)}
+.cal-d.today::after{content:"";position:absolute;inset:2px;border-radius:9px;border:1.5px solid var(--gold);pointer-events:none}
+.cal-d.sel{background:var(--gold-soft);border-radius:0}
+.cal-d.sel.s{border-top-left-radius:11px;border-bottom-left-radius:11px}
+.cal-d.sel.e{border-top-right-radius:11px;border-bottom-right-radius:11px}
+.cal-d.sel.s.e{border-radius:11px;background:linear-gradient(145deg,var(--gold),var(--gold-2));color:#231803}
+.cal-d.sel.s.e .v{color:#231803!important}
+.cal-days .cal-d:nth-child(7n+1).sel{border-top-left-radius:11px;border-bottom-left-radius:11px}
+.cal-days .cal-d:nth-child(7n).sel{border-top-right-radius:11px;border-bottom-right-radius:11px}
+.dots i,.cal-legend i{display:inline-block;width:6px;height:6px;border-radius:50%}
+i.de{background:var(--coral)} i.di{background:var(--mint)} i.dp{background:transparent;border:1.5px solid var(--sky);width:6px;height:6px;box-sizing:border-box}
+.cal-legend{display:flex;gap:14px;justify-content:center;font-size:11.5px;color:var(--text-3);margin-top:10px}
+.cal-legend span{display:inline-flex;align-items:center;gap:5px}
+.cal-quick{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.cal-quick .pick{padding:7px 11px;font-size:12.5px;min-height:0}
+.cal-sum{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.cal-sum>div{background:var(--surface-2);border-radius:12px;padding:11px 12px;min-width:0}
+.cal-sum span{display:block;font-size:11.5px;color:var(--text-3)}
+.cal-sum b{display:block;font-size:16px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cal-cat{display:flex;align-items:center;gap:11px;padding:7px 0}
+.cal-cat .em{font-size:18px;width:28px;text-align:center}
+.cal-cat-main{flex:1;min-width:0;font-size:13.5px}
+.cal-pct{font-size:11.5px;width:34px;text-align:right}
+.cal-cat-h{font-size:12px;font-weight:600;margin-bottom:4px}
+.cal-day-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:14px 4px 6px;border-bottom:1px solid var(--line);margin-bottom:4px;font-size:13.5px}
+.cal-day-h .muted{font-size:12px}
+.cal-day-sum{display:flex;gap:10px;font-size:12.5px;font-weight:600}
+.cal-tx{align-items:start}
+.cal-tx .tx-amt{padding-top:2px}
+.cal-items{display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:6px}
+.cal-items span{font-size:11.5px;color:var(--text-2);background:var(--surface-2);padding:2px 8px;border-radius:8px}
+.cal-items b{font-weight:500;color:var(--text-3)}
+
 /* ================= ТЕЛЕФОН (Samsung Galaxy S25 FE та подібні) ================= */
 @media(max-width:920px){
   body{overscroll-behavior-y:none}
@@ -623,6 +706,15 @@ button,a,.tx,.pick,.nav-item,.tab{touch-action:manipulation}
   .pl-pay{width:42px;height:42px}
   .pl-row{grid-template-columns:42px 1fr auto}
   .sheet-act{min-height:62px}
+  .cal-card{padding:14px 10px}
+  .cal-modes button{padding:10px 4px}
+  .cal-sum{grid-template-columns:1fr 1fr}
+  .cal-quick{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:12px -10px 0;padding:0 10px}
+  .cal-quick::-webkit-scrollbar{display:none}
+  .cal-quick .pick{flex:0 0 auto}
+  .cal-d{min-height:48px;padding:5px 0 4px}
+  .cal-legend{margin-top:6px}
+  .rc-item .rc-sub{grid-template-columns:1fr 104px}
 }
 @media(max-width:360px){
   .kpis,.kpis[style]{grid-template-columns:1fr!important}
@@ -657,6 +749,7 @@ button,a,.tx,.pick,.nav-item,.tab{touch-action:manipulation}
     <div class="nav-label">Огляд</div>
     <button class="nav-item" data-nav="dashboard"><span class="ic">◎</span>Головна</button>
     <button class="nav-item" data-nav="transactions"><span class="ic">≡</span>Операції</button>
+    <button class="nav-item" data-nav="calendar"><span class="ic">📆</span>Календар</button>
     <button class="nav-item" data-nav="analytics"><span class="ic">◔</span>Аналітика</button>
     <div class="nav-label">Планування</div>
     <button class="nav-item" data-nav="planned"><span class="ic">📅</span>Заплановані<span class="nav-badge hidden" id="plBadge"></span></button>
@@ -687,7 +780,7 @@ button,a,.tx,.pick,.nav-item,.tab{touch-action:manipulation}
 
 <nav class="tabbar" id="tabbar" aria-label="Навігація">
   <button class="tab" data-nav="dashboard"><span class="ic">🏠</span><span>Головна</span></button>
-  <button class="tab" data-nav="transactions"><span class="ic">🧾</span><span>Операції</span></button>
+  <button class="tab" data-nav="calendar"><span class="ic">📆</span><span>Календар</span></button>
   <button class="tab-fab" id="fabAdd" aria-label="Додати операцію">＋</button>
   <button class="tab" data-nav="planned"><span class="ic">📅</span><span>План</span><span class="tab-badge hidden" id="tabBadge"></span></button>
   <button class="tab" id="tabMore" data-more><span class="ic">☰</span><span>Ще</span></button>
@@ -1100,6 +1193,7 @@ const VIEWS={
   dashboard:{title:'Головна',   sub:()=>`${S.settings.familyName} · ${fmtMonthTitle(monthKey(today()))}`, hasPeriod:true},
   transactions:{title:'Операції',sub:()=>`${S.transactions.length} записів усього`, hasPeriod:false},
   analytics:{title:'Аналітика', sub:()=>'Динаміка, структура та тренди', hasPeriod:false},
+  calendar:{title:'Календар', sub:()=>'Деталі за день, тиждень, місяць чи період', hasPeriod:false},
   planned:{title:'Заплановані', sub:()=>'Не входять у баланс, доки не проведені', hasPeriod:false},
   budgets:{title:'Бюджети',     sub:()=>fmtMonthTitle(monthKey(today())), hasPeriod:false},
   goals:{title:'Цілі',          sub:()=>'Накопичення та мрії', hasPeriod:false},
@@ -2212,6 +2306,7 @@ function openTxModal(existing, preset){
   const m=modalShell(isEdit?'Редагувати операцію':'Нова операція', isEdit?'✎':'＋');
 
   m.body.innerHTML=`
+    ${isEdit?'':`<button type="button" class="scan-cta" id="txScan"><span class="em">📷</span><div><b>Сканувати чек</b><small>сфотографуйте — товари самі розподіляться за категоріями</small></div></button>`}
     <div class="type-toggle" id="txType">
       <button type="button" data-on="expense"><span class="ic">📉</span>Витрата</button>
       <button type="button" data-on="income"><span class="ic">📈</span>Дохід</button>
@@ -2283,6 +2378,7 @@ function openTxModal(existing, preset){
   }
 
   $$('#txType button',m.body).forEach(b=>b.addEventListener('click',()=>{ f.type=b.dataset.on; paintType(); }));
+  const scBtn=$('#txScan',m.body); if(scBtn) scBtn.addEventListener('click',()=>{ m.close(); setTimeout(openReceiptScanner,220); });
   paintType();
 
   $('#txSave',m.foot).addEventListener('click',()=>{
@@ -2314,7 +2410,7 @@ function openTxModal(existing, preset){
       });
     });
   }
-  setTimeout(()=>amt.focus(),120);
+  if(isEdit || !matchMedia('(max-width:920px)').matches) setTimeout(()=>amt.focus(),120);
 }
 
 /* ---------------- КАТЕГОРІЯ ---------------- */
@@ -2553,6 +2649,7 @@ function render(){
   else if(route==='analytics'){ anaRange=null; renderAnalytics(); }
   else if(route==='budgets') renderBudgets();
   else if(route==='planned') renderPlanned();
+  else if(route==='calendar') renderCalendar();
   else if(route==='goals') renderGoals();
   else if(route==='accounts') renderAccounts();
   else if(route==='settings') renderSettings();
@@ -2648,16 +2745,18 @@ function wireGlobal(){
 }
 
 /* ---------- ТЕЛЕФОН: меню «Ще» та жести ---------- */
-const MORE_ROUTES=['budgets','analytics','goals','accounts','settings'];
+const MORE_ROUTES=['transactions','budgets','analytics','goals','accounts','settings'];
 function openMoreSheet(){
   const m=modalShell('Розділи','☰');
-  const items=[['budgets','💰','Бюджети','ліміти за категоріями'],['analytics','📊','Аналітика','графіки й тренди'],['goals','🎯','Цілі','накопичення та мрії'],['accounts','💳','Рахунки','картки, готівка, регулярні'],['settings','⚙️','Налаштування','родина, категорії, хмара']];
+  const items=[['transactions','🧾','Операції','пошук і фільтри'],['budgets','💰','Бюджети','ліміти за категоріями'],['analytics','📊','Аналітика','графіки й тренди'],['goals','🎯','Цілі','накопичення та мрії'],['accounts','💳','Рахунки','картки, готівка, регулярні'],['settings','⚙️','Налаштування','родина, категорії, хмара']];
   m.body.innerHTML=`<div class="more-grid">${items.map(([r,ic,t,s])=>`<button class="more-item ${route===r?'on':''}" data-go="${r}"><span class="ic">${ic}</span><b>${t}</b><small>${s}</small></button>`).join('')}
+    <button class="more-item" data-more-scan><span class="ic">📷</span><b>Сканувати чек</b><small>товари самі за категоріями</small></button>
     <button class="more-item" data-more-theme><span class="ic">${S.settings.theme==='dark'?'☀️':'🌙'}</span><b>${S.settings.theme==='dark'?'Світла тема':'Темна тема'}</b><small>змінити оформлення</small></button>
     <button class="more-item" data-more-sync><span class="ic">☁️</span><b>${Cloud.budgetId?'Синхронізувати':'Хмара вимкнена'}</b><small>${Cloud.budgetId?'оновити дані зараз':'увійти в Налаштуваннях'}</small></button>
   </div>`;
   m.foot.remove();
   $$('[data-go]',m.body).forEach(b=>b.addEventListener('click',()=>{ m.close(); go(b.dataset.go); }));
+  $('[data-more-scan]',m.body).addEventListener('click',()=>{ m.close(); setTimeout(openReceiptScanner,220); });
   $('[data-more-theme]',m.body).addEventListener('click',()=>{ m.close(); toggleTheme(); });
   $('[data-more-sync]',m.body).addEventListener('click',async()=>{ m.close(); if(!Cloud.budgetId){ go('settings'); return; } await flushSave(); if(Cloud.dirty||Cloud.pushTimer) await cloudPush(); else await cloudPull(); toast('Синхронізовано','☁️'); });
 }
@@ -3613,6 +3712,563 @@ function wirePlanned(){
   }, true);
 }
 
+/* ================================================================
+   Модуль 10 — Сканер чеків
+   Фото → розпізнавання тексту на пристрої (Tesseract, українська) →
+   розбір товарів → категорії (словник + ваші виправлення) → витрати.
+   ================================================================ */
+const OCR_CDN = {
+  lib:    'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js',
+  worker: 'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/worker.min.js',
+  core:   'https://cdn.jsdelivr.net/npm/tesseract.js-core@5.1.1',
+  lang:   'https://cdn.jsdelivr.net/npm/@tesseract.js-data/ukr@1.0.0/4.0.0_best_int'
+};
+let _ocrLoad=null, _ocrLang=null;
+/* укр+англ моделі лежать поруч із сайтом (папка tessdata); якщо їх немає — лише українська з CDN */
+async function rcLangSource(){
+  if(_ocrLang) return _ocrLang;
+  if(/^https?:/.test(location.protocol)){
+    const self=new URL('tessdata', location.href).href;
+    try{ const r=await fetch(self+'/eng.traineddata.gz',{method:'HEAD',cache:'no-store'}); if(r.ok) return (_ocrLang={langs:'ukr+eng', path:self}); }catch(e){}
+  }
+  return (_ocrLang={langs:'ukr', path:OCR_CDN.lang});
+}
+function loadOCR(){
+  if(window.Tesseract) return Promise.resolve(window.Tesseract);
+  if(_ocrLoad) return _ocrLoad;
+  _ocrLoad=new Promise((res,rej)=>{
+    const s=document.createElement('script'); s.src=OCR_CDN.lib;
+    s.onload=()=>window.Tesseract?res(window.Tesseract):rej(new Error('ocr-lib'));
+    s.onerror=()=>{ _ocrLoad=null; rej(new Error('ocr-lib')); };
+    document.head.appendChild(s);
+  });
+  return _ocrLoad;
+}
+
+/* підготовка фото: масштаб, сірий, розтяг контрасту */
+async function rcPrepImage(file){
+  const url=URL.createObjectURL(file);
+  try{
+    const img=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=()=>rej(new Error('img')); i.src=url; });
+    let w=img.naturalWidth, h=img.naturalHeight;
+    let sc=Math.min(1, 2000/w, 5000/h);
+    if(w<1600) sc=Math.min(2.5, 1600/w, 5000/h);
+    const cw=Math.round(w*sc), ch=Math.round(h*sc);
+    const cv=document.createElement('canvas'); cv.width=cw; cv.height=ch;
+    const cx=cv.getContext('2d',{willReadFrequently:true});
+    cx.drawImage(img,0,0,cw,ch);
+    const id=cx.getImageData(0,0,cw,ch), d=id.data, hist=new Uint32Array(256);
+    for(let i=0;i<d.length;i+=4){ const y=(d[i]*299+d[i+1]*587+d[i+2]*114)/1000|0; d[i]=y; hist[y]++; }
+    const n=cw*ch; let acc=0, lo=0, hi=255;
+    for(let v=0;v<256;v++){ acc+=hist[v]; if(acc>n*0.02){ lo=v; break; } }
+    acc=0; for(let v=255;v>=0;v--){ acc+=hist[v]; if(acc>n*0.02){ hi=v; break; } }
+    const span=Math.max(30,hi-lo);
+    for(let i=0;i<d.length;i+=4){ let y=(d[i]-lo)*255/span; y=y<0?0:y>255?255:y; d[i]=d[i+1]=d[i+2]=y; }
+    cx.putImageData(id,0,0);
+    const tw=Math.min(360,cw), th=Math.round(ch*tw/cw);
+    const tc=document.createElement('canvas'); tc.width=tw; tc.height=th; tc.getContext('2d').drawImage(cv,0,0,tw,th);
+    return {canvas:cv, thumb:tc.toDataURL('image/jpeg',.7)};
+  } finally { URL.revokeObjectURL(url); }
+}
+
+async function rcOCR(canvas, onProgress){
+  const T=await loadOCR();
+  const src=await rcLangSource();
+  const worker=await T.createWorker(src.langs, 1, {
+    workerPath:OCR_CDN.worker, corePath:OCR_CDN.core, langPath:src.path,
+    logger:m=>{ try{ onProgress&&onProgress(m); }catch(e){} }
+  });
+  try{
+    await worker.setParameters({tessedit_pageseg_mode:'6', preserve_interword_spaces:'1'});
+    const {data}=await worker.recognize(canvas);
+    return data.text||'';
+  } finally { try{ await worker.terminate(); }catch(e){} }
+}
+
+/* ---------------- розбір тексту чека ---------------- */
+/* \b у JS не бачить кирилиці — власна межа слова */
+const RC_L='A-Za-zА-Яа-яЄєІіЇїҐґʼ’\'';
+const RC_WB=`(?:(?<=[${RC_L}])(?![${RC_L}])|(?<![${RC_L}])(?=[${RC_L}]))`;
+const ub = re => new RegExp(re.source.replace(/\\b/g, RC_WB), re.flags);
+const RC_STORES=[
+  ['АТБ',/\bАТБ\b|ATB/i],['Сільпо',/с[іi]льпо|silpo/i],['Novus',/novus|новус/i],['Фора',/\bфора\b|fora/i],['Ашан',/ашан|auchan/i],
+  ['Varus',/varus|варус/i],['Metro',/\bmetro\b|\bметро\b/i],['Еко маркет',/еко\s*маркет/i],['Велмарт',/велмарт/i],['Таврія В',/таврія/i],
+  ['Близенько',/близенько/i],['Копійочка',/копійочк/i],['Наш Край',/наш\s*край/i],['Ева',/\bева\b|\beva\b/i],['Watsons',/watsons|ватсонс/i],
+  ['Епіцентр',/епіцентр|epicentr/i],['Нова лінія',/нова\s*лінія/i],['Rozetka',/rozetka|розетка/i],['Comfy',/comfy/i],['Фокстрот',/фокстрот|foxtrot/i],
+  ['Аптека АНЦ',/\bанц\b/i],['Подорожник',/подорожник/i],['Аптека 9-1-1',/9-1-1/],['Бажаємо здоровʼя',/бажаємо\s*здоров/i],['Аптека',/аптек/i],
+  ['WOG',/\bwog\b/i],['OKKO',/\bokko\b|\bокко\b/i],['SOCAR',/socar|сокар/i],['UPG',/\bupg\b/i],['БРСМ',/брсм/i],['Shell',/\bshell\b/i],['Укрнафта',/укрнафт/i],
+  ['McDonald’s',/mcdonald|макдональдс/i],['Пузата хата',/пузата/i],['Львівські круасани',/круасани/i],['Aroma Kava',/aroma\s*kava/i]
+];
+RC_STORES.forEach(x=>x[1]=ub(x[1]));
+const RC_STORE_GROUP={'Аптека АНЦ':'health','Подорожник':'health','Аптека 9-1-1':'health','Бажаємо здоровʼя':'health','Аптека':'health',
+  'WOG':'transport','OKKO':'transport','SOCAR':'transport','UPG':'transport','БРСМ':'transport','Shell':'transport','Укрнафта':'transport',
+  'McDonald’s':'cafe','Пузата хата':'cafe','Львівські круасани':'cafe','Aroma Kava':'cafe','Ева':'home','Watsons':'home','Епіцентр':'home','Нова лінія':'home','Comfy':'other','Фокстрот':'other','Rozetka':'other'};
+
+const RC_SKIP=ub(/пдв|податок|акциз|готівк|картк|безгот|решта|оплат|сплачено|касир|кас[аи]\b|чек\s*№|№\s*чек|фіскальн|фіск\.|\bзн\b|\bфн\b|\bпн\b|\bід\b|\bінн\b|\bтов\b|\bтзов\b|\bфоп\b|\bпп\b|вул\.|вулиця|просп|м\.\s|тел\.?|дякуємо|приходьте|www|http|термінал|rrn|\bauth|код\s*авт|mastercard|visa|платіжн|еквайр|кількість\s*товар|бонус.*рахун|номер\s*карт|клієнт|ідентиф|служб|гаряча\s*лінія|арт\.?\s*\d|штрих|qr|чек\s*фіск|прро|рро\b/i);
+const RC_TOTAL=ub(/^\s*(?:сума(?:\s*до\s*сплати)?|всього|разом|до\s*сплати|итого|загальна\s*сума)\b/i);
+const RC_DISCOUNT=ub(/знижк|акці[яї]|discount|бонус/i);
+
+const RC_LAT2CYR={A:'А',B:'В',C:'С',E:'Е',H:'Н',I:'І',K:'К',M:'М',O:'О',P:'Р',T:'Т',X:'Х',Y:'У',a:'а',c:'с',e:'е',i:'і',o:'о',p:'р',x:'х',y:'у'};
+function rcCyr(l){ return l.replace(/[A-Za-zА-Яа-яЄєІіЇїҐґ]+/g,w=>{ const cyr=/[А-Яа-яЄєІіЇїҐґ]/.test(w), lat=w.replace(/[ABCEHIKMOPTXYacieopxy]/g,''); return (cyr || !/[A-Za-z]/.test(lat)) && !/[a-z]{3,}/.test(lat) ? w.replace(/[ABCEHIKMOPTXYacieopxy]/g,ch=>RC_LAT2CYR[ch]) : w; }); }
+function rcNum(s){ return parseFloat(String(s).replace(/\s/g,'').replace(',','.')); }
+function rcCleanLine(l){
+  return l.replace(/[|¦]/g,' ')
+    .replace(/(\d)[Оо0OoD](?=[\d.,])/g,'$10').replace(/([\d.,])[Оо]\b/g,'$10')
+    .replace(/(\d)\s*[.,]\s*(\d{2})(?!\d)/g,'$1.$2')
+    .replace(/\s{2,}/g,' ').trim();
+}
+const RC_PRICE_END=/(-?\d{1,6}\.\d{2})\s*(?:[*#=]?\s*[A-ZА-ЯЄІЇҐa-zа-яєіїґ]{0,2})?\s*$/;
+const RC_QTY=/^(\d+(?:\.\d{1,3})?)\s*(?:шт|кг|л|г)?\.?\s*[xхXХ*×]\s*(\d{1,6}\.\d{2})/;
+
+function parseReceipt(text){
+  const lines=String(text).split(/\r?\n/).map(rcCleanLine).filter(l=>l.length>1);
+  let store='';
+  const cyrText=rcCyr(text);
+  for(const [nm,re] of RC_STORES){ if(lines.slice(0,12).some(l=>re.test(l)||re.test(rcCyr(l)))||re.test(text)||re.test(cyrText)){ store=nm; break; } }
+  if(!store){ const m=text.match(/(?:ТОВ|ТзОВ|ФОП|ПП)\s*["«“„]([^"»”]{2,40})["»”]/i); if(m) store=m[1].trim(); }
+  let date='';
+  for(const m of text.matchAll(/(\d{2})[.\-/](\d{2})[.\-/](\d{4}|\d{2})(?!\d)/g)){
+    const y=m[3].length===2?'20'+m[3]:m[3], mo=+m[2], dd=+m[1];
+    if(mo>=1&&mo<=12&&dd>=1&&dd<=31&&+y>2015){ const s=`${y}-${m[2]}-${m[1]}`; if(s<=today()){ date=s; } }
+  }
+  let total=null; const items=[]; let pending='', started=false;
+  for(const raw of lines){
+    const l=raw, lc=rcCyr(raw);
+    if(RC_TOTAL.test(lc)){ const m=l.match(/(\d{1,6}\.\d{2})/g); if(m){ total=rcNum(m[m.length-1]); } if(items.length) break; else continue; }
+    const letters=(l.match(/[A-Za-zА-Яа-яЄєІіЇїҐґ]/g)||[]).length;
+    const priceM=l.match(RC_PRICE_END);
+    const qtyM=l.match(RC_QTY);
+    if(RC_DISCOUNT.test(lc) && priceM && items.length){ items[items.length-1].amount=Math.max(0, +(items[items.length-1].amount-Math.abs(rcNum(priceM[1]))).toFixed(2)); pending=''; continue; }
+    if(RC_SKIP.test(lc)){ if(!started) pending=''; continue; }
+    if(qtyM){
+      const qty=rcNum(qtyM[1]), unit=rcNum(qtyM[2]);
+      const after=l.slice(qtyM[0].length);
+      const endM=after.match(RC_PRICE_END);
+      const amount=endM?rcNum(endM[1]):+(qty*unit).toFixed(2);
+      let name=pending.trim();
+      const tailName=after.replace(RC_PRICE_END,'').replace(/[=]/g,'').trim();
+      if(!name && (tailName.match(/[A-Za-zА-Яа-яЄєІіЇїҐґ]/g)||[]).length>=3) name=tailName;
+      if(name){ items.push({name:rcTidyName(name), amount, qty}); started=true; }
+      pending=''; continue;
+    }
+    if(priceM){
+      let name=l.slice(0,priceM.index).trim();
+      const nameLetters=(name.match(/[A-Za-zА-Яа-яЄєІіЇїҐґ]/g)||[]).length;
+      const amount=rcNum(priceM[1]);
+      if(amount<=0 || amount>200000){ continue; }
+      if(/^\s*\d+(?:\.\d+)?\s*%/.test(l) || /\d\s*%\s*$/.test(name)) { continue; }
+      if(nameLetters>=3){ if(pending && nameLetters<6) name=pending+' '+name; items.push({name:rcTidyName(name), amount}); started=true; pending=''; continue; }
+      if(pending){ items.push({name:rcTidyName(pending), amount}); started=true; pending=''; continue; }
+      continue;
+    }
+    if(letters>=3){ pending = (pending && started) ? (pending+' '+l) : l; if(pending.length>90) pending=l; }
+  }
+  const out=items.filter(i=>i.name && i.amount>0);
+  if(total!=null) rcAutoFix(out, total);
+  return {store, date, total, items:out};
+}
+/* якщо сума товарів ≠ сумі чека — шукаємо одну типову помилку розпізнавання цифри (0↔9, 6↔0, 5↔6…) */
+const RC_DIGIT_SWAPS={'0':'968','9':'04','6':'058','5':'63','3':'58','8':'036','1':'7','7':'1','4':'9'};
+function rcAutoFix(items, total){
+  const cents=x=>Math.round(x*100);
+  const gap=cents(total)-cents(sum(items,i=>i.amount));
+  if(gap===0 || Math.abs(gap)>99999) return;
+  const fixes=[];
+  items.forEach((it,ix)=>{
+    const s=it.amount.toFixed(2);
+    for(let p=0;p<s.length;p++){ const ch=s[p]; if(!RC_DIGIT_SWAPS[ch]) continue;
+      for(const rep of RC_DIGIT_SWAPS[ch]){ const v=parseFloat(s.slice(0,p)+rep+s.slice(p+1)); if(v>0 && cents(v)-cents(it.amount)===gap) fixes.push([ix,v]); } }
+  });
+  if(fixes.length===1){ const [ix,v]=fixes[0]; items[ix].fixedFrom=items[ix].amount; items[ix].amount=v; }
+}
+function rcTidyName(n){
+  n=n.replace(/(\d)\s?(?:kr|kг|кr)(?![A-Za-zА-Яа-я])/g,'$1кг').replace(/(\d)\s?mn(?![A-Za-zА-Яа-я])/g,'$1мл').replace(/(\d)\s?n(?![A-Za-zА-Яа-я])/g,'$1л').replace(/(\d)\s?r(?![A-Za-zА-Яа-я])/g,'$1г')
+     .replace(/\s+(?:ваг|вага|вес|Bar|sar|bar|Ваr)\.?\s*$/,'');
+  return n.replace(/^\d{4,}\s*/,'').replace(/\s*\b\d{8,14}\b\s*/g,' ').replace(/^[^A-Za-zА-Яа-яЄєІіЇїҐґ0-9]+/,'').replace(/[^\wА-Яа-яЄєІіЇїҐґ%.,'ʼ’\-\s/()]+/g,' ').replace(/\s{2,}/g,' ').trim().slice(0,70);
+}
+
+/* ---------------- категорії ---------------- */
+const RC_GROUPS={
+  food:{hints:['продукт','харч','їжа','супермаркет','гастроном'], words:'молок кефір йогурт сметан ряжанк вершк сирок сир масло маргарин яйц хліб батон булк булоч лаваш багет печив пряник торт тістеч вафл цукерк шоколад мед цукор сіль борошн круп гречк рис пшон вівсян манк макарон спагет вермішел локшин мʼяс мяс м\'яс свинин ялович телятин курк куряч індич філе фарш ковбас сосиск сардель шинк бекон сало риба оселед скумбр лосос форел хек минтай кревет кальмар консерв банан яблук груш апельс мандарин лимон грейпфр виноград ківі ананас кавун диня полуниц ягід картопл морк цибул капуст помідор томат огір перець часник буряк кабачк баклаж редис зелень кріп петруш салат гриб печериц горіх насінн сухофр родзин курага чорнос олія оцет кетчуп майонез гірчиц соус спеці приправ чай кава какао сік нектар вода мінерал лимонад кола пепсі фанта спрайт квас чіпс сухар снек крекер морозив пельмен вареник піца мюслі пластівц джем варення паштет тунець бринз моцарел пармезан хумус тофу кукурудз горох квасол сочевиц нут дріждж желе пудинг ваніл кориц батончик'},
+  alcohol:{hints:['алког','напої','бар'], words:'пиво вино горілк коньяк бренді віскі ром джин текіл шампан ігрист лікер сидр вермут'},
+  home:{hints:['побут','дім','госп','хімі','дому'], words:'порошок пральн ополіск кондиціонер засіб мийн чистящ чистяч відбілюв плямовив мило шампун бальзам гель зубн щітк дезодор антиперсп туалетн папір серветк рушник губк пакет фольг плівк смітт освіжувач лампоч батарейк свічк ганчір прокладк тампон бритв станок піна крем вологі ватн'},
+  health:{hints:['здоров','апт','лік','медиц'], words:'таблет таб драже вітамін парацетам ібупроф аспірин нурофен цитрамон анальгін сироп краплі спрей мазь бинт пластир шприц термометр антисепт маск но-шпа вугілля ліки фарматекс омега магній протеїн пробіот'},
+  kids:{hints:['діт','дитин','малюк'], words:'підгуз памперс дитяч пустушк соска іграшк хаггіс huggies pampers'},
+  pets:{hints:['тварин','кіт','пес','улюбл'], words:'корм котів собак наповнювач whiskas pedigree felix purina royal'},
+  transport:{hints:['транспорт','авто','пальн','машин'], words:'бензин а-95 а95 а-92 а92 дизель дп пальне пропан мийка омивач антифриз моторн'},
+  cafe:{hints:['кафе','ресторан','кав\'ярн','кавʼярн','фастфуд'], words:'капучино лате латте еспресо американо флет раф бургер фрі нагетс шаурм хот-дог роли суші'},
+  clothes:{hints:['одяг','взут'], words:'футболк шкарпет носк труси джинс сорочк куртк взутт кросів шапк рукавиц светр'},
+  other:{hints:['інше','різне'], words:''}
+};
+for(const g of Object.values(RC_GROUPS)) g.list=g.words.split(/\s+/).filter(Boolean);
+
+function rcKey(name){
+  const w=String(name).toLowerCase().replace(/[ʼ’']/g,'').match(/[a-zа-яєіїґ]{3,}/g)||[];
+  return w.slice(0,2).join(' ');
+}
+function rcGroupFor(name, store){
+  const n=' '+String(name).toLowerCase().replace(/[ʼ’]/g,"'")+' ';
+  if(/\d\s*мг(?![а-яa-z])/i.test(name) || /\bтаб\.?\s/i.test(n)) return 'health';
+  let best=null, bestLen=0;
+  for(const [g,def] of Object.entries(RC_GROUPS)){
+    for(const w of def.list){ if(w.length>bestLen && (n.includes(' '+w) || (w.length>=5 && n.includes(w)))){ best=g; bestLen=w.length; } }
+  }
+  if(best) return best;
+  return RC_STORE_GROUP[store]||'food';
+}
+function rcCategoryForGroup(g){
+  const exp=S.categories.filter(c=>c.type==='expense');
+  const by=hints=>exp.find(c=>hints.some(h=>c.name.toLowerCase().includes(h)));
+  const order={alcohol:['alcohol','food'], kids:['kids','home','other'], pets:['pets','home','other'], home:['home','other'], health:['health','other'], transport:['transport','other'], cafe:['cafe','food'], clothes:['clothes','other'], food:['food'], other:['other']}[g]||[g,'other'];
+  for(const k of order){ const c=by(RC_GROUPS[k].hints); if(c) return c.id; }
+  return (by(RC_GROUPS.other.hints)||by(RC_GROUPS.food.hints)||exp[0]||{}).id||null;
+}
+function rcSuggestCategory(name, store){
+  const rules=(S.settings&&S.settings.receiptRules)||{};
+  const k=rcKey(name);
+  if(k && rules[k] && cat(rules[k])) return rules[k];
+  const k1=k.split(' ')[0];
+  if(k1 && rules[k1] && cat(rules[k1])) return rules[k1];
+  return rcCategoryForGroup(rcGroupFor(name, store));
+}
+
+/* ---------------- інтерфейс ---------------- */
+function openReceiptScanner(){
+  const m=modalShell('Сканувати чек','📷');
+  m.body.innerHTML=`
+    <div class="rc-pick">
+      <label class="rc-big"><input type="file" accept="image/*" capture="environment" id="rcCam" hidden><span class="em">📷</span><b>Сфотографувати чек</b><small>відкриється камера</small></label>
+      <label class="rc-big soft"><input type="file" accept="image/*" id="rcGal" hidden><span class="em">🖼</span><b>З галереї</b><small>готове фото чека</small></label>
+    </div>
+    <div class="insight" style="margin-top:14px"><span class="em">💡</span><div class="txt">Розправте чек на <b>темній рівній поверхні</b>, фотографуйте <b>згори при доброму світлі</b>, щоб чек займав увесь кадр. Розпізнавання відбувається <b>на телефоні</b> — фото нікуди не надсилається. Перший раз завантажиться мовна модель (~2 МБ).</div></div>
+    <div id="rcProg" class="hidden"></div>`;
+  m.foot.remove();
+  const onFile=async e=>{
+    const file=e.target.files&&e.target.files[0]; if(!file) return;
+    const pr=$('#rcProg',m.body);
+    $('.rc-pick',m.body).classList.add('hidden'); pr.classList.remove('hidden');
+    const set=(t,p)=>{ pr.innerHTML=`<div class="rc-prog"><div class="rc-spin"></div><b>${esc(t)}</b><div class="bar" style="margin-top:12px"><span style="width:${Math.round((p||0)*100)}%;background:linear-gradient(90deg,var(--gold-2),var(--gold))"></span></div></div>`; };
+    set('Готуємо фото…',0.05);
+    try{
+      const {canvas,thumb}=await rcPrepImage(file);
+      set('Завантажуємо розпізнавання…',0.1);
+      const text=await rcOCR(canvas, msg=>{
+        if(/load|initializ/i.test(msg.status)) set('Завантажуємо мовну модель…', 0.1+0.3*(msg.progress||0));
+        else if(/recogniz/i.test(msg.status)) set('Читаємо чек…', 0.4+0.6*(msg.progress||0));
+      });
+      const parsed=parseReceipt(text);
+      m.close();
+      setTimeout(()=>openReceiptReview(parsed, text, thumb), 220);
+    }catch(err){
+      pr.innerHTML=`<div class="rc-prog"><span style="font-size:34px">⚠️</span><b>${/ocr-lib|fetch|network|load/i.test(String(err&&err.message))?'Немає інтернету для першого завантаження розпізнавання':'Не вдалося прочитати фото'}</b><div class="muted" style="font-size:13px;margin-top:6px">Спробуйте ще раз${navigator.onLine?'':' з інтернетом'}.</div><button class="btn btn-ghost" style="margin-top:14px" id="rcAgain">Спробувати ще раз</button></div>`;
+      $('#rcAgain',pr).addEventListener('click',()=>{ pr.classList.add('hidden'); $('.rc-pick',m.body).classList.remove('hidden'); });
+    }
+    e.target.value='';
+  };
+  $('#rcCam',m.body).addEventListener('change',onFile);
+  $('#rcGal',m.body).addEventListener('change',onFile);
+}
+
+function openReceiptReview(parsed, rawText, thumb){
+  const expCats=S.categories.filter(c=>c.type==='expense');
+  const st={ store:parsed.store||'', date:parsed.date||today(), accountId:S.accounts[0]?.id||null, memberId:null,
+    mode:'group', items:parsed.items.map(i=>({name:rcCyr(i.name).replace(/(\d)\s?r\b/g,'$1г'), amount:i.amount, fixedFrom:i.fixedFrom, on:true, auto:null, categoryId:null})) };
+  st.items.forEach(i=>{ i.categoryId=i.auto=rcSuggestCategory(i.name, st.store); });
+  if(!st.items.length && parsed.total) st.items.push({name:st.store?`Покупка в ${st.store}`:'Покупка за чеком', amount:parsed.total, on:true, auto:null, categoryId:rcCategoryForGroup(RC_STORE_GROUP[st.store]||'food')});
+  const m=modalShell('Перевірте чек','🧾',true);
+
+  function catOptions(sel){ return expCats.map(c=>`<option value="${c.id}" ${c.id===sel?'selected':''}>${c.emoji} ${esc(c.name)}</option>`).join('')+`<option value="__new">＋ Нова категорія…</option>`; }
+  function totals(){
+    const on=st.items.filter(i=>i.on&&i.amount>0);
+    return {on, sum:+sum(on,i=>i.amount).toFixed(2), cats:new Set(on.map(i=>i.categoryId)).size};
+  }
+  function paintFoot(){
+    const t=totals();
+    const n = st.mode==='group'?t.cats:t.on.length;
+    m.foot.innerHTML=`<button class="btn btn-primary btn-block" id="rcAdd" ${t.on.length?'':'disabled style="opacity:.5"'}>Додати ${n} ${plural(n,'витрату','витрати','витрат')} · ${fmt(t.sum)}</button>`;
+    $('#rcAdd',m.foot).addEventListener('click',commit);
+    const chk=$('#rcCheck',m.body);
+    if(chk){
+      if(parsed.total!=null){
+        const diff=+(parsed.total-t.sum).toFixed(2);
+        chk.className='rc-check '+(Math.abs(diff)<0.01?'ok':'warn');
+        chk.innerHTML = Math.abs(diff)<0.01 ? `✓ Сума збігається з чеком: <b>${fmt(parsed.total)}</b>`
+          : `⚠ Разом ${fmt(t.sum)}, а в чеку <b>${fmt(parsed.total)}</b> (різниця ${fmt(diff)}). Перевірте суми або <button class="link" id="rcFix">додати різницю окремим рядком</button>`;
+        const fx=$('#rcFix',chk); if(fx) fx.addEventListener('click',()=>{ if(diff>0){ st.items.push({name:'Інші товари з чека', amount:diff, on:true, auto:null, categoryId:rcCategoryForGroup('other')}); paintItems(); } });
+      } else chk.className='hidden';
+    }
+  }
+  function paintItems(){
+    const box=$('#rcItems',m.body);
+    box.innerHTML = st.items.length ? st.items.map((it,ix)=>`
+      <div class="rc-item ${it.on?'':'off'}" data-ix="${ix}">
+        <label class="rc-on"><input type="checkbox" ${it.on?'checked':''} data-f="on"><span></span></label>
+        <input class="input rc-name" data-f="name" value="${esc(it.name)}" placeholder="Назва товару">
+        ${it.fixedFrom!=null?`<div class="rc-fixed">✓ суму виправлено за підсумком чека (розпізнано ${fmt(it.fixedFrom)})</div>`:''}
+        <div class="rc-sub">
+          <select class="input rc-cat" data-f="categoryId">${catOptions(it.categoryId)}</select>
+          <input class="input rc-amt num" data-f="amount" inputmode="decimal" value="${it.amount}">
+        </div>
+      </div>`).join('') : `<div class="muted" style="text-align:center;padding:18px 6px;font-size:13.5px">Товари не знайдено. Додайте рядки вручну або сфотографуйте чек ще раз — ближче та рівніше.</div>`;
+    $$('.rc-item',box).forEach(row=>{
+      const it=st.items[+row.dataset.ix];
+      row.querySelector('[data-f="on"]').addEventListener('change',e=>{ it.on=e.target.checked; row.classList.toggle('off',!it.on); paintFoot(); });
+      row.querySelector('[data-f="name"]').addEventListener('input',e=>{ it.name=e.target.value; });
+      row.querySelector('[data-f="name"]').addEventListener('change',e=>{ if(it.categoryId===it.auto){ it.categoryId=it.auto=rcSuggestCategory(it.name, st.store); row.querySelector('select').value=it.categoryId; paintFoot(); } });
+      row.querySelector('[data-f="amount"]').addEventListener('input',e=>{ it.amount=parseAmount(e.target.value); paintFoot(); });
+      row.querySelector('select').addEventListener('change',e=>{
+        if(e.target.value==='__new'){ e.target.value=it.categoryId; openCategoryModal(null,'expense',newId=>{ expCats.splice(0,expCats.length,...S.categories.filter(c=>c.type==='expense')); it.categoryId=newId; paintItems(); }); return; }
+        it.categoryId=e.target.value; paintFoot();
+      });
+    });
+    paintFoot();
+  }
+
+  m.body.innerHTML=`
+    <div class="rc-head">
+      ${thumb?`<img src="${thumb}" alt="Фото чека" class="rc-thumb">`:''}
+      <div class="rc-meta">
+        <div class="field"><label>Магазин</label><input class="input" id="rcStore" value="${esc(st.store)}" placeholder="Назва магазину"></div>
+        <div class="field"><label>Дата</label><input class="input" type="date" id="rcDate" value="${st.date}"></div>
+      </div>
+    </div>
+    <div class="field"><label>Рахунок</label><div class="picker" id="rcAcc">${S.accounts.map(a=>`<button type="button" class="pick ${st.accountId===a.id?'on':''}" data-acc="${a.id}"><span class="em">${a.emoji}</span>${esc(a.name)}</button>`).join('')}</div></div>
+    <div class="field"><label>Як записати</label>
+      <div class="seg" id="rcMode"><button type="button" data-m="group" class="on">Згрупувати за категоріями</button><button type="button" data-m="each">Кожен товар окремо</button></div></div>
+    <div id="rcCheck" class="hidden"></div>
+    <div class="row-between" style="margin:12px 0 6px"><b style="font-size:14px">Товари (${st.items.length})</b><button type="button" class="btn btn-soft btn-sm" id="rcAddRow">＋ Рядок</button></div>
+    <div id="rcItems" class="rc-items"></div>
+    <details class="rc-raw"><summary>Розпізнаний текст</summary><pre>${esc(rawText||'')}</pre></details>`;
+  $('#rcStore',m.body).addEventListener('input',e=>st.store=e.target.value.trim());
+  $('#rcDate',m.body).addEventListener('input',e=>{ if(e.target.value) st.date=e.target.value; });
+  bindPicker(m.body,'#rcAcc .pick','data-acc',st,'accountId');
+  $$('#rcMode button',m.body).forEach(b=>b.addEventListener('click',()=>{ st.mode=b.dataset.m; $$('#rcMode button',m.body).forEach(x=>x.classList.toggle('on',x===b)); paintFoot(); }));
+  $('#rcAddRow',m.body).addEventListener('click',()=>{ st.items.push({name:'', amount:0, on:true, auto:null, categoryId:rcCategoryForGroup('food')}); paintItems(); const ins=$$('#rcItems .rc-name',m.body); ins[ins.length-1]?.focus(); });
+  paintItems();
+
+  function commit(){
+    const t=totals(); if(!t.on.length) return;
+    if(!st.accountId){ toast('Оберіть рахунок','⚠️'); return; }
+    if(t.on.some(i=>!i.categoryId)){ toast('Оберіть категорії для всіх товарів','⚠️'); return; }
+    // запамʼятати виправлення категорій
+    S.settings.receiptRules=S.settings.receiptRules||{};
+    for(const i of t.on){ const k=rcKey(i.name); if(k && i.auto && i.categoryId!==i.auto) S.settings.receiptRules[k]=i.categoryId; }
+    const tags=['чек'].concat(st.store?[st.store]:[]);
+    const added=[];
+    if(st.mode==='each'){
+      for(const i of t.on) added.push({id:uid(), type:'expense', amount:+i.amount.toFixed(2), categoryId:i.categoryId, accountId:st.accountId, memberId:st.memberId, date:st.date, note:(i.name||catName(i.categoryId)), tags:[...tags]});
+    } else {
+      const groups={};
+      for(const i of t.on) (groups[i.categoryId]=groups[i.categoryId]||[]).push(i);
+      for(const [cid,arr] of Object.entries(groups)){
+        const names=arr.map(i=>i.name).filter(Boolean);
+        let note=(st.store?st.store+': ':'')+names.join(', ');
+        if(note.length>110) note=note.slice(0,107).replace(/,?\s*[^,]*$/,'')+'…';
+        added.push({id:uid(), type:'expense', amount:+sum(arr,i=>i.amount).toFixed(2), categoryId:cid, accountId:st.accountId, memberId:st.memberId, date:st.date,
+          note, tags:[...tags], items:arr.map(i=>({name:i.name, amount:+i.amount.toFixed(2)}))});
+      }
+    }
+    S.transactions.push(...added);
+    S.transactions.sort((a,b)=>a.date<b.date?1:a.date>b.date?-1:0);
+    save(); m.close(); render(); refreshChrome();
+    toast(`Додано з чека: ${added.length} ${plural(added.length,'витрата','витрати','витрат')} · ${fmt(t.sum)}`,'🧾');
+  }
+}
+
+/* ================================================================
+   Модуль 11 — Календар: день / тиждень / місяць / свій період
+   ================================================================ */
+let calMode='day', calSel=today(), calMonth=monthKey(today()), calFrom=null, calTo=null, calPick=0, calType='all';
+const CAL_MODES=[['day','День'],['week','Тиждень'],['month','Місяць'],['range','Період']];
+const DOW_FULL_UK=['понеділок','вівторок','середа','четвер','пʼятниця','субота','неділя'];
+const MONTHS_GEN=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
+
+function calRange(){
+  if(calMode==='day') return {start:calSel,end:calSel};
+  if(calMode==='week') return periodRange('week',calSel);
+  if(calMode==='month') return periodRange('month',calSel);
+  const a=calFrom||calSel, b=calTo||a; return a<=b?{start:a,end:b}:{start:b,end:a};
+}
+function calHuman(s,withYear){ const d=parseISO(s); return `${d.getDate()} ${MONTHS_GEN[d.getMonth()]}${withYear?' '+d.getFullYear():''}`; }
+function calTitle(r){
+  if(calMode==='day'){ const h=fmtDateHuman(r.start); const d=parseISO(r.start); return `${/^\d/.test(h)?'':h+', '}${DOW_FULL_UK[(d.getDay()+6)%7]}, ${calHuman(r.start,true)}`; }
+  if(calMode==='month') return fmtMonthTitle(monthKey(r.start));
+  if(r.start===r.end) return calHuman(r.start,true);
+  const sy=r.start.slice(0,4)!==r.end.slice(0,4);
+  return `${calHuman(r.start,sy)} – ${calHuman(r.end,true)}`;
+}
+
+function renderCalendar(){
+  const r=calRange();
+  const days=daysBetween(r.start,r.end)+1;
+  const all=S.transactions.filter(t=>t.date>=r.start && t.date<=r.end);
+  const list=all.filter(t=>calType==='all'||t.type===calType);
+  const inc=sum(all.filter(t=>t.type==='income'),t=>t.amount);
+  const exp=sum(all.filter(t=>t.type==='expense'),t=>t.amount);
+  const net=inc-exp;
+  const planned=(typeof plOccurrences==='function')?plOccurrences(r.start,r.end):[];
+
+  // категорії
+  const byCat=(type)=>{ const m={}; for(const t of all.filter(x=>x.type===type)) m[t.categoryId]=(m[t.categoryId]||0)+t.amount;
+    return Object.entries(m).map(([id,v])=>({c:cat(id),id,v})).sort((a,b)=>b.v-a.v); };
+  const ce=byCat('expense'), ci=byCat('income');
+  const catBlock=(arr,total,color)=>arr.map(x=>`<div class="cal-cat">
+      <span class="em">${x.c?x.c.emoji:'❓'}</span><div class="cal-cat-main"><div class="row-between"><span>${esc(x.c?x.c.name:'Без категорії')}</span><b class="num">${fmt(x.v)}</b></div>
+      <div class="bar" style="height:6px;margin-top:6px"><span style="width:${total?Math.max(2,x.v/total*100):0}%;background:${x.c?x.c.color:color}"></span></div></div>
+      <span class="muted num cal-pct">${total?Math.round(x.v/total*100):0}%</span></div>`).join('');
+
+  // по днях
+  const by={}; for(const t of list) (by[t.date]=by[t.date]||[]).push(t);
+  const dayKeys=Object.keys(by).sort();
+  const dayHTML=dayKeys.map(d=>{
+    const ts=by[d].slice().sort((a,b)=>(a.type===b.type?0:a.type==='income'?-1:1));
+    const di=sum(ts.filter(t=>t.type==='income'),t=>t.amount), de=sum(ts.filter(t=>t.type==='expense'),t=>t.amount);
+    const dd=parseISO(d);
+    return `<div class="cal-day-h"><div><b>${dd.getDate()} ${MONTHS_GEN[dd.getMonth()]}</b> <span class="muted">${DOW_FULL_UK[(dd.getDay()+6)%7]}${d===today()?' · сьогодні':''}</span></div>
+      <div class="num cal-day-sum">${di?`<span class="pos">+${fmt(di)}</span>`:''}${de?`<span class="neg">−${fmt(de).replace('−','')}</span>`:''}</div></div>
+      ${ts.map(calTxHTML).join('')}`;
+  }).join('');
+
+  setView(`
+    <div class="grid cal-grid" style="grid-template-columns:minmax(330px,400px) 1fr;align-items:start">
+      <div class="card cal-card">
+        <div class="seg cal-modes" style="margin-bottom:14px">${CAL_MODES.map(([k,l])=>`<button data-cal-mode="${k}" class="${calMode===k?'on':''}">${l}</button>`).join('')}</div>
+        <div class="cal-nav"><button class="icon-btn" data-cal-mon="-1" aria-label="Попередній місяць">‹</button>
+          <b>${fmtMonthTitle(calMonth)}</b>
+          <button class="icon-btn" data-cal-mon="1" aria-label="Наступний місяць">›</button></div>
+        ${calGridHTML(r)}
+        ${calMode==='range'?`<div class="field-row" style="margin-top:12px">
+          <div class="field" style="margin:0"><label>Від</label><input class="input" type="date" id="calFrom" value="${r.start}"></div>
+          <div class="field" style="margin:0"><label>До</label><input class="input" type="date" id="calTo" value="${r.end}"></div></div>
+          <div class="muted" style="font-size:12px;margin-top:8px">${calPick?'Тепер оберіть кінцеву дату':'Торкніться першого й останнього дня періоду'}</div>`:''}
+        <div class="cal-quick">
+          <button class="pick btn-sm" data-cal-q="today">Сьогодні</button>
+          <button class="pick btn-sm" data-cal-q="yesterday">Вчора</button>
+          <button class="pick btn-sm" data-cal-q="week">Цей тиждень</button>
+          <button class="pick btn-sm" data-cal-q="month">Цей місяць</button>
+          <button class="pick btn-sm" data-cal-q="prevmonth">Минулий місяць</button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <div class="card">
+          <div class="row-between" style="align-items:flex-start">
+            <div><div class="muted" style="font-size:12px">${{day:'День',week:'Тиждень',month:'Місяць',range:'Період'}[calMode]}${days>1?` · ${days} ${plural(days,'день','дні','днів')}`:''}</div>
+              <h3 style="font-size:18px;margin-top:3px">${calTitle(r)}</h3></div>
+            <button class="btn btn-ghost btn-sm" data-cal-csv ${all.length?'':'disabled style="opacity:.5"'}>⬇ CSV</button>
+          </div>
+          <div class="cal-sum">
+            <div><span>Доходи</span><b class="num pos">+${fmt(inc)}</b></div>
+            <div><span>Витрати</span><b class="num neg">−${fmt(exp).replace('−','')}</b></div>
+            <div><span>Різниця</span><b class="num ${net>=0?'pos':'neg'}">${fmt(net,{sign:true})}</b></div>
+            <div><span>Операцій</span><b class="num">${all.length}</b></div>
+          </div>
+          ${days>1&&exp?`<div class="muted" style="font-size:12.5px;margin-top:10px">У середньому витрати <b class="num" style="color:var(--text)">${fmt(exp/days)}</b> на день</div>`:''}
+        </div>
+
+        ${ce.length||ci.length?`<div class="card">
+          <div class="card-head"><h3>За категоріями</h3></div>
+          ${ce.length?`<div class="cal-cat-h neg">Витрати · ${fmt(exp).replace('−','')}</div>${catBlock(ce,exp,'var(--coral)')}`:''}
+          ${ci.length?`<div class="cal-cat-h pos" style="margin-top:${ce.length?14:0}px">Доходи · ${fmt(inc)}</div>${catBlock(ci,inc,'var(--mint)')}`:''}
+        </div>`:''}
+
+        <div class="card">
+          <div class="card-head"><h3>Усі операції</h3><span class="spacer"></span>
+            <div class="chip-tabs">${[['all','Усі'],['expense','Витрати'],['income','Доходи'],['transfer','Перекази']].map(([k,l])=>`<button data-cal-type="${k}" class="${calType===k?'on':''}">${l}</button>`).join('')}</div></div>
+          ${list.length?`<div class="ledger">${dayHTML}</div>`:emptyBox('📭','Немає операцій', all.length?'Спробуйте інший фільтр.':'За цей період нічого не записано.')}
+          <button class="btn btn-soft btn-block" style="margin-top:12px;justify-content:center" data-cal-add>＋ Додати операцію на ${calMode==='day'?fmtDateHuman(r.start).toLowerCase():'цей період'}</button>
+        </div>
+
+        ${planned.length?`<div class="card">
+          <div class="card-head"><h3>📅 Заплановано</h3><div class="sub">ще не в балансі · ${fmt(sum(planned,o=>o.amount))}</div></div>
+          <div class="ledger">${planned.map(o=>plRowHTML(o, o.date<today())).join('')}</div></div>`:''}
+      </div>
+    </div>`);
+
+  const f=$('#calFrom'), tt=$('#calTo');
+  if(f) f.addEventListener('change',e=>{ if(e.target.value){ calFrom=e.target.value; calMonth=monthKey(calFrom); calPick=0; render(); } });
+  if(tt) tt.addEventListener('change',e=>{ if(e.target.value){ calTo=e.target.value; calPick=0; render(); } });
+}
+
+function calTxHTML(t){
+  const c=cat(t.categoryId), a=acc(t.accountId), m=mem(t.memberId);
+  const isT=t.type==='transfer';
+  const title=isT?`Переказ → ${esc(accName(t.toAccountId))}`:(t.note?esc(t.note):esc(c?c.name:'Операція'));
+  const sign=t.type==='income'?'+':t.type==='expense'?'−':'';
+  const meta=[ isT?esc(accName(t.accountId)):esc(c?c.name:'Без категорії'), a&&!isT?esc(a.name):'', m?esc(m.name):'' ].filter(Boolean);
+  const items=(t.items||[]).length?`<div class="cal-items">${t.items.map(i=>`<span>${esc(i.name)} <b class="num">${fmt(i.amount)}</b></span>`).join('')}</div>`:'';
+  return `<div class="tx cal-tx" data-edit-tx="${t.id}">
+    <div class="tx-ic" style="background:${isT?'var(--sky-soft)':(c?hexA(c.color,.14):'var(--surface-2)')}">${isT?'🔄':(c?c.emoji:'❓')}</div>
+    <div class="tx-main"><div class="tx-title" style="white-space:normal">${title}</div>
+      <div class="tx-meta">${meta.map((x,i)=>`${i?'<span class="dot"></span>':''}<span>${x}</span>`).join('')}${(t.tags||[]).map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</div>
+      ${items}</div>
+    <div class="tx-amt ${t.type==='income'?'pos':t.type==='expense'?'neg':''}">${sign}${fmt(t.amount).replace('−','')}</div>
+  </div>`;
+}
+
+function calGridHTML(r){
+  const [y,mo]=calMonth.split('-').map(Number);
+  const first=`${calMonth}-01`, dow=plDow(first)-1;
+  const start=addDays(first,-dow);
+  const dim=new Date(y,mo,0).getDate();
+  const weeks=Math.ceil((dow+dim)/7);
+  const end=addDays(start,weeks*7-1);
+  const agg={};
+  for(const t of S.transactions){ if(t.date<start||t.date>end) continue; const a=agg[t.date]=agg[t.date]||{i:0,e:0,n:0}; if(t.type==='income') a.i+=t.amount; else if(t.type==='expense') a.e+=t.amount; a.n++; }
+  const pl=new Set((typeof plOccurrences==='function'?plOccurrences(start,end):[]).map(o=>o.date));
+  const maxE=Math.max(1,...Object.values(agg).map(a=>a.e));
+  let html=`<div class="cal-wk">${DOW_UK.map(d=>`<span>${d}</span>`).join('')}</div><div class="cal-days">`;
+  for(let i=0;i<weeks*7;i++){
+    const d=addDays(start,i), a=agg[d], inMonth=d.slice(0,7)===calMonth;
+    const sel=d>=r.start&&d<=r.end, isS=d===r.start, isE=d===r.end;
+    const heat=a&&a.e?Math.min(1,.18+.82*a.e/maxE):0;
+    html+=`<button class="cal-d${inMonth?'':' out'}${sel?' sel':''}${isS?' s':''}${isE?' e':''}${d===today()?' today':''}" data-cal-day="${d}" aria-label="${calHuman(d,true)}">
+      <span class="n">${+d.slice(8)}</span>
+      ${a&&a.e?`<span class="v neg">${fmtShort(a.e)}</span>`:(a&&a.i?`<span class="v pos">+${fmtShort(a.i)}</span>`:'<span class="v"> </span>')}
+      <span class="dots">${a&&a.i?'<i class="di"></i>':''}${a&&a.e?`<i class="de" style="opacity:${heat}"></i>`:''}${pl.has(d)?'<i class="dp"></i>':''}</span>
+    </button>`;
+  }
+  return html+`</div><div class="cal-legend"><span><i class="de"></i>витрати</span><span><i class="di"></i>доходи</span><span><i class="dp"></i>заплановано</span></div>`;
+}
+
+function calExportCSV(){
+  const r=calRange();
+  const rows=[['Дата','Тип','Категорія','Рахунок','Куди','Учасник','Сума','Нотатка','Товари','Теги']];
+  const typeLbl={income:'Дохід',expense:'Витрата',transfer:'Переказ'};
+  for(const t of S.transactions.filter(t=>t.date>=r.start&&t.date<=r.end).sort((a,b)=>a.date<b.date?-1:1)){
+    rows.push([t.date,typeLbl[t.type]||t.type,t.type==='transfer'?'—':catName(t.categoryId),accName(t.accountId),t.type==='transfer'?accName(t.toAccountId):'',
+      mem(t.memberId)?.name||'',String(t.amount).replace('.',','),(t.note||'').replace(/"/g,'""'),(t.items||[]).map(i=>`${i.name} ${i.amount}`).join('; ').replace(/"/g,'""'),(t.tags||[]).join(' ')]);
+  }
+  const csv='﻿'+rows.map(r=>r.map(c=>`"${String(c)}"`).join(';')).join('\r\n');
+  download(`родинна-каса-${r.start}${r.end!==r.start?'_'+r.end:''}.csv`, csv, 'text/csv');
+  toast('CSV за період збережено','📄');
+}
+
+function wireCalendar(){
+  document.addEventListener('click',e=>{
+    if(route!=='calendar' || e.target.closest('#modalRoot')) return;
+    const md=e.target.closest('[data-cal-mode]'); if(md){ calMode=md.dataset.calMode; if(calMode==='range'){ const r=periodRange('week',calSel); calFrom=calFrom||r.start; calTo=calTo||r.end; calPick=0; } render(); return; }
+    const mn=e.target.closest('[data-cal-mon]'); if(mn){ calMonth=monthKey(addMonths(calMonth+'-01',+mn.dataset.calMon)); if(calMode==='month'){ calSel=calMonth+'-01'; } render(); return; }
+    const dy=e.target.closest('[data-cal-day]'); if(dy){
+      const d=dy.dataset.calDay;
+      if(calMode==='range'){ if(!calPick){ calFrom=d; calTo=d; calPick=1; } else { if(d<calFrom){ calTo=calFrom; calFrom=d; } else calTo=d; calPick=0; } }
+      else calSel=d;
+      if(monthKey(d)!==calMonth) calMonth=monthKey(d);
+      render(); return;
+    }
+    const q=e.target.closest('[data-cal-q]'); if(q){
+      const k=q.dataset.calQ, t=today();
+      if(k==='today'){ calMode='day'; calSel=t; } else if(k==='yesterday'){ calMode='day'; calSel=addDays(t,-1); }
+      else if(k==='week'){ calMode='week'; calSel=t; } else if(k==='month'){ calMode='month'; calSel=t; }
+      else if(k==='prevmonth'){ calMode='month'; calSel=addMonths(monthKey(t)+'-01',-1); }
+      calMonth=monthKey(calSel); calPick=0; render(); return;
+    }
+    const ty=e.target.closest('[data-cal-type]'); if(ty){ calType=ty.dataset.calType; render(); return; }
+    if(e.target.closest('[data-cal-csv]')){ calExportCSV(); return; }
+    if(e.target.closest('[data-cal-add]')){ const r=calRange(); openTxModal(null,{date: r.start<=today()&&r.end>=today()?today():r.start}); return; }
+  });
+}
+
 async function boot(){
   initStorage();                                   // визначаємо localStorage / window.storage / памʼять
   renderPeriodSwitch();
@@ -3628,6 +4284,7 @@ async function boot(){
   wireGlobal();
   wireCloud();
   wirePlanned();
+  wireCalendar();
   go('dashboard');
   if(firstRun){ await persistNow(); }
   await cloudStart();                              // вхід / вибір бюджету / синхронізація
